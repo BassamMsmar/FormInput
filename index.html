@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تعديل المنتج</title>
+  <style>
+    /* تنسيق الرسالة العائمة */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      z-index: 1000;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+    .modal-header {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .modal-buttons {
+      text-align: right;
+    }
+    .btn {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-save {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .btn-cancel {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <button id="editButton">تعديل المنتج</button>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="editModal">
+    <div class="modal-header">تعديل المنتج</div>
+    <form id="editForm">
+      <label for="productName">اسم المنتج:</label><br>
+      <input type="text" id="productName" name="productName" required><br><br>
+      <label for="productPrice">سعر المنتج:</label><br>
+      <input type="number" id="productPrice" name="productPrice" required><br><br>
+      <div class="modal-buttons">
+        <button type="button" class="btn btn-cancel" id="cancelButton">إلغاء</button>
+        <button type="submit" class="btn btn-save">حفظ</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
